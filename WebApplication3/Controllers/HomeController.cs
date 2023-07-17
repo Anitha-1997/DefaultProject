@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Bulky.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using WebApplication3.Models;
 
 namespace WebApplication3.Controllers
 {

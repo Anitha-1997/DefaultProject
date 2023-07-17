@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication3.Data;
-using WebApplication3.Models;
+﻿using Bulky.Models;
+using Microsoft.AspNetCore.Mvc;
+using Bulky.DataAccess.Data;
 
 namespace WebApplication3.Controllers
 {

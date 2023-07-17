@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkyWebRazor", "BulkyWebRa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulky.DataAccess", "Bulky.DataAccess\Bulky.DataAccess.csproj", "{489AB902-375A-464E-9193-0FC013CF89E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulky.Models", "Bulky.Models\Bulky.Models.csproj", "{C19437CC-E6B2-490F-AAF7-1434ED40727B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulky.Utility", "Bulky.Utility\Bulky.Utility.csproj", "{F21786A6-2524-4AB6-BC78-55B5ACA75EA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{489AB902-375A-464E-9193-0FC013CF89E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{489AB902-375A-464E-9193-0FC013CF89E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{489AB902-375A-464E-9193-0FC013CF89E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C19437CC-E6B2-490F-AAF7-1434ED40727B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19437CC-E6B2-490F-AAF7-1434ED40727B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19437CC-E6B2-490F-AAF7-1434ED40727B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19437CC-E6B2-490F-AAF7-1434ED40727B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F21786A6-2524-4AB6-BC78-55B5ACA75EA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F21786A6-2524-4AB6-BC78-55B5ACA75EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F21786A6-2524-4AB6-BC78-55B5ACA75EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F21786A6-2524-4AB6-BC78-55B5ACA75EA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

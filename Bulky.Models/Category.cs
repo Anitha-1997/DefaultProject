@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApplication3.Models
+namespace Bulky.Models
 {
     public class Category
     {
@@ -12,7 +12,7 @@ namespace WebApplication3.Models
         [MaxLength(30)]
         public string Name { get; set; }
         [DisplayName("Display Order")]
-        [Range(1, 100,ErrorMessage ="The value is to be less than 100 and greater than 0")]
+        [Range(1, 100, ErrorMessage = "The value is to be less than 100 and greater than 0")]
         public int DisplayOrder { get; set; }
     }
 }
