@@ -2,19 +2,21 @@
 using Microsoft.AspNetCore.Mvc;
 using Bulky.DataAccess.Data;
 using Bulky.DataAccess.Repository.IRepository;
+using Bulky.DataAccess.Repository;
 
-namespace WebApplication3.Controllers
+namespace WebApplication3.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
-        private readonly ICategoryRepository _categoryRepo;
-        public CategoryController(ICategoryRepository db)
+        private readonly IUnitOfWork _unitOfWork;
+        public CategoryController(IUnitOfWork unitOfWork)
         {
-            _categoryRepo = db;
+            _unitOfWork = unitOfWork;
         }
         public IActionResult Index()
         {
-            List<Category> objCategoryList = _categoryRepo.GetAll().ToList();
+            List<Category> objCategoryList = _unitOfWork.Category.GetAll().ToList();
             return View(objCategoryList);
         }
 
@@ -27,8 +29,8 @@ namespace WebApplication3.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
-            _categoryRepo.Add(obj);
-            _categoryRepo.Save();
+            _unitOfWork.Category.Add(obj);
+            _unitOfWork.Save();
             TempData["success"] = "Added successfully";
             return RedirectToAction("Index");
         }
@@ -38,7 +40,7 @@ namespace WebApplication3.Controllers
             {
                 return NotFound();
             }
-            Category? categoryObjDb = _categoryRepo.Get(u=>u.Id ==Id);
+            Category? categoryObjDb = _unitOfWork.Category.Get(u => u.Id == Id);
             if (categoryObjDb == null)
             {
                 return NotFound();
@@ -51,8 +53,8 @@ namespace WebApplication3.Controllers
 
             if (ModelState.IsValid)
             {
-               _categoryRepo.Update(obj);
-                _categoryRepo.Save();
+                _unitOfWork.Category.Update(obj);
+                _unitOfWork.Save();
                 TempData["success"] = "Updated successfully";
                 return RedirectToAction("Index");
             }
@@ -61,7 +63,7 @@ namespace WebApplication3.Controllers
 
         public IActionResult Delete(int? Id)
         {
-            Category? obj = _categoryRepo.Get(u => u.Id == Id);
+            Category? obj = _unitOfWork.Category.Get(u => u.Id == Id);
             if (obj == null)
             {
                 return NotFound();
@@ -71,13 +73,13 @@ namespace WebApplication3.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? Id)
         {
-            Category? obj = _categoryRepo.Get(u => u.Id == Id);
+            Category? obj = _unitOfWork.Category.Get(u => u.Id == Id);
             if (obj == null)
             {
                 return NotFound();
             }
-            _categoryRepo.Remove(obj);
-            _categoryRepo.Save();
+            _unitOfWork.Category.Remove(obj);
+            _unitOfWork.Save();
             TempData["success"] = "Deleted successfully";
             return RedirectToAction("Index");
         }
